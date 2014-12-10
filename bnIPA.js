@@ -24,3 +24,12 @@ function bnIPA(bengali){
   }
   return ipa;
 }
+
+function bnIPARef(){
+  var ref="";
+  for (var bn in BN_IPA){
+    ipa = BN_IPA[bn]
+    ref+="<span class='ref'><span class='bn'>"+bn+"</span><span class='ipa'>"+ipa+"</span></span> ";
+  }
+  return ref;
+}
