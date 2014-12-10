@@ -12,13 +12,21 @@ var BN_IPA = {
   'শ':'ʃ', 'ষ':'ʂ', 'স':'s', 'হ':'ɦ',
   'ড়':'ɾ', 'ঢ়':'ɽʱ', 'য়':'e̯',
   'ৎ':'t̪', 'ং':'ŋ', 'ঃ':'h','ঁ':'◌̃',
-  '\'':'ɔ', '@':'æ'
+  '\'':'ɔ', '@':'æ', 'ফ়':'f', '্য':'j'
 };
 
 function bnIPA(bengali){
   var ipa=""
   for (var i = 0, len = bengali.length; i < len; i++) {
     b = bengali[i];
+    if(b==='ফ' && bengali[i+1]==='়'){
+      i++;
+      b = 'ফ়';
+    }
+    if(b==='্' && bengali[i+1]==='য'){
+      i++;
+      b = '্য';
+    }
     if (b in BN_IPA) p = BN_IPA[b];
     else p = b;
     ipa+=p;
